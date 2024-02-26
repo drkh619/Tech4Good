@@ -101,11 +101,15 @@ class _FeedbackPageState extends State<FeedbackPage> {
           return AlertDialog(
             title: Text('Feedback Submitted'),
             content: Column(
+              mainAxisSize: MainAxisSize.min, // Set mainAxisSize to min
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 buildLottieAnimation(),
+                SizedBox(height: 16), // Add some space between the animation and text
                 Text('Thank you for your feedback!'),
               ],
             ),
+            contentPadding: EdgeInsets.fromLTRB(24, 20, 24, 0), // Adjust content padding
             actions: [
               TextButton(
                 onPressed: () {
@@ -114,6 +118,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 child: Text('OK'),
               ),
             ],
+            insetPadding: EdgeInsets.symmetric(horizontal: 40), // Adjust inset padding
           );
         },
       );
